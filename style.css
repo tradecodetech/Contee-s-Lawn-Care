@@ -145,4 +145,139 @@ h2 {
   background: #f0f8f3;
 }
 
-/* ===========*
+/* =========================
+   TRUST BADGES
+========================= */
+
+.trust-badges {
+  margin-top: 22px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  font-size: 0.9rem;
+  opacity: 0.95;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   HOW IT WORKS
+========================= */
+
+.how-it-works {
+  background: #f9faf9;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.step {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   CTA STRIP
+========================= */
+
+.cta-strip {
+  background: #1f7a3a;
+  color: #ffffff;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.cta-strip h2,
+.cta-strip p {
+  color: #ffffff;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  background: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   DESKTOP HERO FIX (KEY)
+========================= */
+
+@media (min-width: 1024px) {
+  .hero {
+    height: 92vh;
+    min-height: 650px;
+    background-size: 105%;
+    background-position: 68% 45%;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  body {
+    padding-top: 56px;
+  }
+
+  .nav-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-links {
+    margin-top: 10px;
+  }
+
+  .hero {
+    height: 70vh;
+    background-position: center right;
+  }
+
+  .hero-content h1 {
+    font-size: 1.9rem;
+  }
+
+  .trust-badges {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
