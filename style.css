@@ -51,11 +51,11 @@ h2 {
 }
 
 /* =========================
-   HERO (IMAGE-BASED, CONVERTING)
+   HERO (IMAGE-BASED)
 ========================= */
 
 .hero {
-  background-image: url("assets/images/hero.jpg");
+  background-image: url("/assets/images/hero.jpg");
   background-size: cover;
   background-position: center;
   height: 70vh;
@@ -63,9 +63,8 @@ h2 {
   position: relative;
 }
 
-
 .hero-overlay {
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.25); /* lighter so image shows */
   height: 100%;
   display: flex;
   align-items: center;
@@ -87,6 +86,21 @@ h2 {
 .hero-content p {
   font-size: 1.2rem;
   margin-bottom: 20px;
+}
+
+/* =========================
+   TRUST BADGES (HERO)
+========================= */
+
+.trust-badges {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #ffffff;
+  opacity: 0.95;
 }
 
 /* =========================
@@ -128,7 +142,7 @@ section {
 }
 
 /* =========================
-   SERVICES (IMAGE CARDS)
+   SERVICES
 ========================= */
 
 .service-cards {
@@ -139,26 +153,34 @@ section {
 
 .service-card {
   background: #ffffff;
+  padding: 30px 20px;
   border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
   text-align: center;
-}
-
-.service-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
 
 .service-card h3 {
-  margin: 20px 15px 10px;
+  margin-top: 15px;
+  margin-bottom: 10px;
   color: #1f7a3a;
 }
 
 .service-card p {
-  margin: 0 15px 25px;
   font-size: 0.95rem;
+}
+
+/* Icon circle for emoji icons */
+.icon-circle {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 10px;
+  background: #eaf5ee;
+  color: #1f7a3a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
 }
 
 /* =========================
