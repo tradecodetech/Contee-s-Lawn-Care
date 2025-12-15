@@ -14,7 +14,7 @@ body {
   color: #1f2933;
   background: #ffffff;
   line-height: 1.6;
-  padding-top: 64px; /* navbar offset */
+  padding-top: 64px;
 }
 
 h2 {
@@ -48,7 +48,6 @@ h2 {
   color: #ffffff;
   font-weight: bold;
   font-size: 1.2rem;
-  letter-spacing: 0.3px;
 }
 
 .nav-links a {
@@ -64,29 +63,30 @@ h2 {
 }
 
 /* =========================
-   HERO (CORE)
+   HERO (FIXED CORRECTLY)
 ========================= */
 
 .hero {
   background-image: url("assets/images/hero.jpg");
   background-repeat: no-repeat;
-  background-position: right center;
-  height: 75vh;
-  min-height: 480px;
+  background-size: cover;              /* ✅ ALWAYS cover on desktop */
+  background-position: 82% center;     /* ✅ bias toward worker */
+  height: 90vh;
+  min-height: 700px;
   position: relative;
-  margin-top: -64px; /* pulls hero under navbar cleanly */
+  margin-top: -64px;
 }
 
-/* Overlay */
+/* Overlay for text clarity */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(0,0,0,0.6) 0%,
+    rgba(0,0,0,0.65) 0%,
     rgba(0,0,0,0.35) 45%,
-    rgba(0,0,0,0.15) 100%
+    rgba(0,0,0,0.10) 100%
   );
   z-index: 1;
 }
@@ -250,23 +250,7 @@ footer {
 }
 
 /* =========================
-   DESKTOP (FIXED WORKER VISIBILITY)
-========================= */
-
-@media (min-width: 1024px) {
-  .hero {
-    height: 95vh;
-    min-height: 720px;
-
-    /* KEY FIX */
-    background-size: contain;
-    background-position: right center;
-    background-color: #1f7a3a; /* fills empty space cleanly */
-  }
-}
-
-/* =========================
-   MOBILE (KEEP AS-IS)
+   MOBILE (KEEP PERFECT)
 ========================= */
 
 @media (max-width: 768px) {
