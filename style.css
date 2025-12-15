@@ -2,7 +2,9 @@
    GLOBAL
 ========================= */
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -17,7 +19,7 @@ body {
 
 h2 {
   color: #1f7a3a;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   text-align: center;
 }
 
@@ -46,13 +48,15 @@ h2 {
   color: #ffffff;
   font-weight: bold;
   font-size: 1.2rem;
+  letter-spacing: 0.3px;
 }
 
 .nav-links a {
   color: #ffffff;
-  margin-left: 15px;
+  margin-left: 18px;
   text-decoration: none;
   font-weight: bold;
+  font-size: 0.95rem;
 }
 
 .nav-links a:hover {
@@ -60,25 +64,30 @@ h2 {
 }
 
 /* =========================
-   HERO
+   HERO (REFINED)
 ========================= */
 
 .hero {
   background-image: url("assets/images/hero.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 70% center;
+  background-position: 75% center;
   height: 75vh;
-  min-height: 450px;
+  min-height: 480px;
   position: relative;
 }
 
-/* overlay for readability */
+/* Overlay for text readability */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.38);
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.55) 0%,
+    rgba(0,0,0,0.35) 45%,
+    rgba(0,0,0,0.15) 100%
+  );
   z-index: 1;
 }
 
@@ -96,16 +105,18 @@ h2 {
   padding: 20px;
   text-align: center;
   color: #ffffff;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.45);
+  text-shadow: 0 3px 8px rgba(0,0,0,0.5);
 }
 
 .hero-content h1 {
-  font-size: 2.4rem;
-  margin-bottom: 10px;
+  font-size: 2.5rem;
+  margin-bottom: 12px;
 }
 
 .hero-content p {
   font-size: 1.1rem;
+  max-width: 620px;
+  margin: auto;
 }
 
 /* =========================
@@ -113,17 +124,17 @@ h2 {
 ========================= */
 
 .cta-buttons {
-  margin-top: 22px;
+  margin-top: 26px;
 }
 
 .cta {
   display: inline-block;
-  padding: 14px 28px;
+  padding: 14px 30px;
   margin: 6px;
   border-radius: 6px;
   font-weight: bold;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
 
 .cta.primary {
@@ -133,6 +144,8 @@ h2 {
 
 .cta.primary:hover {
   background: #186633;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
 }
 
 .cta.secondary {
@@ -143,6 +156,7 @@ h2 {
 
 .cta.secondary:hover {
   background: #f0f8f3;
+  transform: translateY(-1px);
 }
 
 /* =========================
@@ -153,7 +167,7 @@ h2 {
   margin-top: 22px;
   display: flex;
   justify-content: center;
-  gap: 18px;
+  gap: 20px;
   font-size: 0.9rem;
   opacity: 0.95;
 }
@@ -165,7 +179,7 @@ h2 {
 section {
   max-width: 1100px;
   margin: auto;
-  padding: 60px 20px;
+  padding: 70px 20px;
 }
 
 /* =========================
@@ -175,15 +189,15 @@ section {
 .service-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
+  gap: 32px;
 }
 
 .service-card {
   background: #ffffff;
-  padding: 30px;
-  border-radius: 12px;
+  padding: 32px;
+  border-radius: 14px;
   text-align: center;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
 }
 
 /* =========================
@@ -197,15 +211,15 @@ section {
 .steps {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
+  gap: 32px;
 }
 
 .step {
   background: #ffffff;
-  padding: 30px;
-  border-radius: 12px;
+  padding: 32px;
+  border-radius: 14px;
   text-align: center;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
 }
 
 /* =========================
@@ -216,7 +230,7 @@ section {
   background: #1f7a3a;
   color: #ffffff;
   text-align: center;
-  padding: 60px 20px;
+  padding: 70px 20px;
 }
 
 .cta-strip h2,
@@ -230,26 +244,28 @@ section {
 
 footer {
   background: #f4f4f4;
-  padding: 20px;
+  padding: 22px;
   text-align: center;
   font-size: 0.9rem;
 }
 
 /* =========================
-   DESKTOP HERO FIX (KEY)
+   DESKTOP HERO FIX (FINAL)
 ========================= */
 
 @media (min-width: 1024px) {
   .hero {
     height: 92vh;
-    min-height: 650px;
-    background-size: 105%;
-    background-position: 68% 45%;
+    min-height: 680px;
+
+    /* Show MORE of the worker */
+    background-size: 100%;
+    background-position: 85% center;
   }
 }
 
 /* =========================
-   MOBILE
+   MOBILE (KEEP GOOD)
 ========================= */
 
 @media (max-width: 768px) {
@@ -269,7 +285,7 @@ footer {
 
   .hero {
     height: 70vh;
-    background-position: center right;
+    background-position: right center;
   }
 
   .hero-content h1 {
