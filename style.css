@@ -14,7 +14,7 @@ body {
   color: #1f2933;
   background: #ffffff;
   line-height: 1.6;
-  padding-top: 64px;
+  padding-top: 64px; /* navbar offset */
 }
 
 h2 {
@@ -64,27 +64,27 @@ h2 {
 }
 
 /* =========================
-   HERO (REFINED)
+   HERO (CORE)
 ========================= */
 
 .hero {
   background-image: url("assets/images/hero.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 75% center;
+  background-position: right center;
   height: 75vh;
   min-height: 480px;
   position: relative;
+  margin-top: -64px; /* pulls hero under navbar cleanly */
 }
 
-/* Overlay for text readability */
+/* Overlay */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(0,0,0,0.55) 0%,
+    rgba(0,0,0,0.6) 0%,
     rgba(0,0,0,0.35) 45%,
     rgba(0,0,0,0.15) 100%
   );
@@ -105,7 +105,7 @@ h2 {
   padding: 20px;
   text-align: center;
   color: #ffffff;
-  text-shadow: 0 3px 8px rgba(0,0,0,0.5);
+  text-shadow: 0 3px 8px rgba(0,0,0,0.55);
 }
 
 .hero-content h1 {
@@ -250,22 +250,23 @@ footer {
 }
 
 /* =========================
-   DESKTOP HERO FIX (FINAL)
+   DESKTOP (FIXED WORKER VISIBILITY)
 ========================= */
 
 @media (min-width: 1024px) {
   .hero {
-    height: 92vh;
-    min-height: 680px;
+    height: 95vh;
+    min-height: 720px;
 
-    /* Show MORE of the worker */
-    background-size: 100%;
-    background-position: 85% center;
+    /* KEY FIX */
+    background-size: contain;
+    background-position: right center;
+    background-color: #1f7a3a; /* fills empty space cleanly */
   }
 }
 
 /* =========================
-   MOBILE (KEEP GOOD)
+   MOBILE (KEEP AS-IS)
 ========================= */
 
 @media (max-width: 768px) {
@@ -285,6 +286,7 @@ footer {
 
   .hero {
     height: 70vh;
+    background-size: cover;
     background-position: right center;
   }
 
